@@ -10,6 +10,7 @@ import { SendPictureComponent } from './send-picture/send-picture.component';
 import { UserInformationComponent } from './user-information/user-information.component';
 import { RatingPageComponent } from './rating-page/rating-page.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { PickUpPassComponent } from './pick-up-pass/pick-up-pass.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     ShareInformationComponent,
     SendPictureComponent,
     UserInformationComponent,
-    RatingPageComponent
+    RatingPageComponent,
+    PickUpPassComponent
 
   ],
   imports: [
