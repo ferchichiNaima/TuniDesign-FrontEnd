@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./send-picture.component.css']
 })
 export class SendPictureComponent implements OnInit {
-
+  test=false;
   constructor() { }
 
   ngOnInit(): void {
+  }
+  confirm()
+  {
+    this.test=true;
+
   }
 
 }

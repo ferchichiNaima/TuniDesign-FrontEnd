@@ -2,7 +2,8 @@
 <head>
 </head>
 <body>
-  <div class="container">
+  <div  class="container">
+    <div *ngIf="!test">
     <p style="color:white;text-align: center;margin: 10px 0; font-size: 20px;">Please share your accident's picture </p>
     <div style="display:flex ; margin: 50px 0; ">
       <div>
@@ -17,9 +18,15 @@
   <img style="width: 200px; height: auto;border-radius: 10px;  display: block;margin-left: auto;margin-right: auto;width: 60% ;"src="assets/noir.jpg">
   <div style="height:100px" class="user-input-box"  >
     <div  style="width:500px;position:absolute;align-content: center; margin-bottom: 10px;">
-      <input type="submit" value="Confirm" style="  font-size: 30px; margin: 30px 0;background-color: rgb(255, 255, 255);text-size-adjust: 20px;height: 50px;">
+      <input type="submit" value="Confirm" style="  font-size: 30px; margin: 30px 0;background-color: rgb(255, 255, 255);text-size-adjust: 20px;height: 50px;" (click)="confirm()">
    </div>
 </div>
 
+</div>
+<div *ngIf="test">
+  <img style="width: 250px; display: block;margin-left: 150px; margin-right: auto;margin-top: 130px;"src="assets/ok.png" >
+  <h2 style="text-align: center; color: white;">Congrats!</h2>
+  <h5 style="text-align: center; color: white; margin-top: 20px;">Your Pick Up order is processing...</h5>
+</div>
   </div>
 </body>
