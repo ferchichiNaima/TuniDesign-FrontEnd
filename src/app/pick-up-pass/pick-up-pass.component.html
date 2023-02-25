@@ -4,11 +4,11 @@
 <body>
   <div class="container">
     <div class="card">
-      <h3 class="adress"><b> 187 TUNIS 9110</b></h3>
+      <h3 class="adress"><b> {{adress}}</b></h3>
       <button type="button" class="btn btn-success pick" [disabled]="test">Start the PickUp</button>
       <div class="horizental-ligne"></div>
       <p class="dep">Departure</p>
-      <h4 class="date">Monday, 20 Nov 22-12:33</h4>
+      <h4 class="date"> {{date}}</h4>
 
       <img class="QR" src="assets/QRcode.PNG" >
       <div style="display:flex ">
@@ -18,8 +18,8 @@
       <div *ngIf="test" style="display:flex ">
         <p class="info"><b>Information</b></p>
 
-         <P class="blue-sign-right"><b>23:13</b></P>
-         <P class="blue-sign-left"><b>23:13</b></P>
+         <P class="blue-sign-right"><b>{{time}}</b></P>
+         <P class="blue-sign-left"><b>{{distance}} KM</b></P>
 
       </div>
     </div>

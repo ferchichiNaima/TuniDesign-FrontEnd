@@ -8,12 +8,22 @@ import { Router } from '@angular/router';
 })
 export class ShareInformationComponent implements OnInit {
 
+  pickUpLocation!:string;
+  destination!:string;
+  phone!:string;
+  people!:number;
+  situationType!:string;
   constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
   confirm()
 {
+  console.log(this.pickUpLocation)
+  console.log(this.destination)
+  console.log(this.people)
+  console.log(this.phone)
+  console.log(this.situationType)
   this.router.navigate(['/sendPicture']);
 }
 

@@ -5,8 +5,6 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css" integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q" crossorigin="anonymous">
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-
-
 <body>
 
 <div class="container">
@@ -27,7 +25,7 @@
                             <span class="input-group-text"><i class="fas fa-user"></i></span>
                         </div>
 
-                        <input type="text" class="form-control" id="email" name="email"  placeholder="Enter your email" type="email"/>
+                        <input  class="form-control" id="email" name="email"  placeholder="Enter your email" type="email" [(ngModel)]="email" />
 
                     </div>
                     <div class="input-group form-group">
@@ -35,13 +33,13 @@
                             <span class="input-group-text"><i class="fas fa-key"></i></span>
                         </div>
 
-                        <input type="text" class="form-control" id="password"  name="password"  class="form-control" placeholder="Enter your password" type="password"/>
+                        <input type="text" class="form-control" id="password"  name="password"  class="form-control" placeholder="Enter your password" [(ngModel)]="password"/>
                     </div>
                     <div class="row align-items-center remember">
                         <input type="checkbox">Remember Me
                     </div>
                     <div class="form-group">
-                        <input type="submit" value="Login" class="btn float-right login_btn" >
+                        <input type="submit" value="Login" class="btn float-right login_btn"  (click)="submit()" >
                     </div>
                 </form>
             </div>

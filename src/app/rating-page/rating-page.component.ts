@@ -9,7 +9,12 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 })
 export class RatingPageComponent implements OnInit {
   starRating = 0;
-
+  orderTime="22 Nov 22-12:33"
+  startTime="22 Nov 22-12:46"
+  endTime="22 Nov 22-12:27"
+  duration="41:00"
+  distance="23.4"
+  feedback!:string;
 
   constructor() { }
 
@@ -17,8 +22,10 @@ export class RatingPageComponent implements OnInit {
 
   }
 
-show()
+submit()
 {
   console.log(this.starRating);
+  console.log(this.feedback)
 }
+
 }

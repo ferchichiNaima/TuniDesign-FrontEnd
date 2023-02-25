@@ -11,43 +11,43 @@
         <tr >
           <td ><b>Order Time</b></td>
 
-          <td style="text-align: right ;">22 Nov 22-12:33</td>
+          <td style="text-align: right ;">{{orderTime}}</td>
         </tr>
         <tr>
           <td ><b>Start Time</b></td>
 
-          <td style="text-align: right ;">22 Nov 22-12:46</td>
+          <td style="text-align: right ;">{{startTime}}</td>
         </tr>
         <tr>
           <td><b>End Time</b></td>
 
-          <td style="text-align: right ;">22 Nov 22-12:27</td>
+          <td style="text-align: right ;">{{endTime}}</td>
         </tr>
         <tr>
           <td><b>Duration</b></td>
 
-          <td style="text-align: right ;">41:00 Mn</td>
+          <td style="text-align: right ;">{{duration}} Mn</td>
         </tr>
         <tr >
           <td style="border-bottom: 1px solid #ffffff;"><b>Distance</b></td>
 
-          <td class="last">23.4 KM</td>
+          <td class="last">{{distance}} KM</td>
         </tr>
 
       </table>
 
     </div>
     <h4 class="message"> <b>Please rate the driver</b></h4>
-    <ngb-rating  [max]="5" [(rate)]="starRating" [readonly]="false" (onclick)="show()"></ngb-rating>
+    <ngb-rating  [max]="5" [(rate)]="starRating" [readonly]="false"></ngb-rating>
 
       <div class="input-icons">
         <i class="fa fa-pencil icon"></i>
-        <input  class="input-field" type="text" class="feedback" placeholder="Leave your feedback..." >
+        <input  class="input-field" type="text" class="feedback" placeholder="Leave your feedback..." [(ngModel)]="feedback">
     </div>
 
 
 
-      <input type="submit" value="Submit" class="submit">
+      <input type="submit" value="Submit" class="submit" (click)="submit()">
 
 
 
