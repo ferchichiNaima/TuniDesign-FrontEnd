@@ -1,0 +1,89 @@
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Responsive Registration Form</title>
+  <meta name="viewport" content="width=device-width,
+      initial-scale=1.0" />
+
+</head>
+
+<body>
+  <div class="container">
+    <h4 style="text-align: center;color: white;"><b>Share your information</b></h4>
+    <p style="color: rgb(136, 135, 135);text-align: center;margin: 10px 0;">Please share your informations to help you </p>
+    <img   style="width: 250px; height: auto;border-radius: 10px; display: block;margin-left: auto; margin-right: auto;"src="assets/gps.jpg" >
+
+    <form action="#">
+
+        <div class="user-input-box">
+          <label for="location">Pick Up Location *</label>
+          <div class="input-icons">
+            <i class="fa fa-map-marker icon"></i>
+            <input class="input-field" type="text" id="location" name="location" placeholder="Enter your location " />
+        </div>
+        </div>
+        <div class="user-input-box">
+          <label for="destination">Destination *</label>
+          <div class="input-icons">
+            <i class="fa fa-map-marker icon"></i>
+          <input class="input-field" type="text" id="destination" name="destination"placeholder="Enter your destination"/>
+        </div>
+        </div>
+
+    <div style="display:flex ;">
+        <div class="user-input-box ">
+          <label for="phone">Phone *</label>
+          <div class="input-icons">
+          <i class="fa fa-phone icon"></i>
+          <input class="input-field" type="text" id="phone" name="phone" style="width: 200px;" placeholder="Write your phone"  />
+        </div>
+        </div>
+
+        <div class="user-input-box" >
+          <label for="poeple">Poeple *</label>
+          <div class="input-icons">
+            <i class="fa fa-users icon"></i>
+          <input class="input-field" style="width: 200px;" type="number" id="poeple" name="poeple" placeholder="How many poeple"  min="1" max="5" />
+        </div>
+    </div>
+
+      </div>
+      <div class="user-input-box">
+        <label for="typeaccident">What type of situation ? *</label>
+      </div>
+        <div class="gender-category">
+            <input type="radio" name="gender" id="male" value="male" style="margin-left: 50px; max-resolution: 10px;" >
+            <label style="color:white;" for="male" style="">Accident</label>
+            <input type="radio" name="gender" id="female" value="female" style="margin-left: 290px;">
+            <label style="color:white" for="female">BreakDown</label>
+          </div>
+
+        <div style="height:100px" class="user-input-box"  >
+          <div  style="width:500px;position:absolute;align-content: center; margin-bottom: 10px;">
+            <input type="submit" value="Confirm" style="  font-size: 20px; background-color: rgb(240, 238, 234);">
+         </div>
+      </div>
+
+
+      <!--<div class="user-input-box">
+        <img [src]="url" style="width:100px; height:100px; object-fit: cover; border-radius: 50%;">
+      </div>
+      <div class="main-user-info" style="display: inline-block; position: absolute; left: 319px; top: 295px;">
+        <div class="user-input-box" class="image-upload" style="margin-left: 20px;">
+          <label for="file-input">
+            <i class="fas fa-camera" style="font-size:40px;color:grey;"></i>
+            <label for="fullName">
+              <p *ngIf=imageOk style="margin-left: 10px;color: grey;"> Image uploaded.</p>
+              <p *ngIf=!imageOk style="margin-left: 10px;color: grey;">Upload your profile picture *</p>
+            </label>
+          </label>
+          <input id="file-input" type="file" (change)="onselectFile($event)" class="fas fa-camera" />
+        </div>
+      </div>-->
+
+    </form>
+  </div>
+</body>
+
+</html>
