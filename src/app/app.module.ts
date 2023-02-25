@@ -9,8 +9,11 @@ import { ShareInformationComponent } from './share-information/share-information
 import { SendPictureComponent } from './send-picture/send-picture.component';
 import { UserInformationComponent } from './user-information/user-information.component';
 import { RatingPageComponent } from './rating-page/rating-page.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 
 @NgModule({
+
   declarations: [
     AppComponent,
     LoginPageComponent,
@@ -19,10 +22,12 @@ import { RatingPageComponent } from './rating-page/rating-page.component';
     SendPictureComponent,
     UserInformationComponent,
     RatingPageComponent
+
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule ,
   ],
   providers: [],
   bootstrap: [AppComponent]
