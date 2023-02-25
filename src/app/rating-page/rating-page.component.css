@@ -78,6 +78,7 @@ ngb-rating {
   }
   .input-icons i {
     position: absolute;
+    font-size: 25px;
   }
 
 
@@ -87,6 +88,8 @@ ngb-rating {
     min-width: 40px;
     margin-left:480px;
     margin-top:2%;
+
+
   }
 
   .input-field {
