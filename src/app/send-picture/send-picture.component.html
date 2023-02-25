@@ -4,29 +4,29 @@
 <body>
   <div  class="container">
     <div *ngIf="!test">
-    <p style="color:white;text-align: center;margin: 10px 0; font-size: 20px;">Please share your accident's picture </p>
+    <p class="ask">Please share your accident's picture </p>
     <div style="display:flex ; margin: 50px 0; ">
       <div>
-      <i class="fas fa-image" style="font-size: 90px;color:white; margin-left: 40px"></i>
-      <label for="fullName" style="color:white; font-size: 15px;margin-left: 40px"><p>From Gallery</p> </label>
+      <i class="fas fa-image gallery-icon"></i>
+      <label for="fullName" class="pic-gallery"><p>From Gallery</p> </label>
     </div>
     <div>
-      <i class="fas fa-camera" style="font-size: 90px;color:white; margin-left: 240px;"></i>
-      <label for="fullName" style="color:white; font-size: 15px;margin-left: 230px;"><p>Take a picture</p> </label>
+      <i class="fas fa-camera icon-camera"></i>
+      <label for="fullName" class="take-pic"><p>Take a picture</p> </label>
     </div>
   </div>
-  <img style="width: 200px; height: auto;border-radius: 10px;  display: block;margin-left: auto;margin-right: auto;width: 60% ;"src="assets/noir.jpg">
+  <img class="image" src="assets/noir.jpg">
   <div style="height:100px" class="user-input-box"  >
-    <div  style="width:500px;position:absolute;align-content: center; margin-bottom: 10px;">
-      <input type="submit" value="Confirm" style="  font-size: 30px; margin: 30px 0;background-color: rgb(255, 255, 255);text-size-adjust: 20px;height: 50px;" (click)="confirm()">
+    <div class="div-style">
+      <input type="submit" value="Confirm" class="submit" (click)="confirm()">
    </div>
 </div>
 
 </div>
 <div *ngIf="test">
-  <img style="width: 250px; display: block;margin-left: 150px; margin-right: auto;margin-top: 130px;"src="assets/ok.png" >
-  <h2 style="text-align: center; color: white;">Congrats!</h2>
-  <h5 style="text-align: center; color: white; margin-top: 20px;">Your Pick Up order is processing...</h5>
+  <img class="image-congrats" src="assets/ok.png" >
+  <h2 class="congrats">Congrats!</h2>
+  <h5 class="process">Your Pick Up order is processing...</h5>
 </div>
   </div>
 </body>

@@ -166,3 +166,37 @@ body{
   text-align:center;
 
 }
+.submit{
+  font-size: 20px;
+   background-color: rgb(240, 238, 234);
+}
+.div-style{
+  width:500px;
+  position:absolute;
+  align-content: center;
+  margin-bottom: 10px;
+}
+.radio1{
+  margin-left: 50px;
+  max-resolution: 10px;
+}
+.radio2{
+  margin-left: 290px;
+}
+.image{
+  width: 250px;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.ask{
+  color: rgb(136, 135, 135);
+  text-align: center;
+  margin: 10px 0;
+}
+.share{
+  text-align: center;
+  color: white;
+}

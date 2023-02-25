@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./pick-up-pass.component.css']
 })
 export class PickUpPassComponent implements OnInit {
-  test=false;
+  test=!false;
   disabled = true;
   constructor() { }
 

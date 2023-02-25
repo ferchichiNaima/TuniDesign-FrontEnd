@@ -3,8 +3,8 @@
 </head>
 <body>
   <div class="container">
-    <img style="width: 120px; display: block;margin-left: 230px; margin-right: auto;"src="assets/ok.png" >
-    <h1 style="text-align: center; color: white;">Thank you ! </h1>
+    <img class="logo" src="assets/ok.png" >
+    <h1 class="thank">Thank you ! </h1>
     <div class="card" style="margin-top:20px ;">
       <table style="margin-top: 6px;">
 
@@ -31,23 +31,23 @@
         <tr >
           <td style="border-bottom: 1px solid #ffffff;"><b>Distance</b></td>
 
-          <td style="text-align: right ;border-bottom: 1px solid #ffffff;">23.4 KM</td>
+          <td class="last">23.4 KM</td>
         </tr>
 
       </table>
 
     </div>
-    <h4 style="text-align: center;margin-top: 20px; color: rgb(45, 45, 45);"> <b>Please rate the driver</b></h4>
+    <h4 class="message"> <b>Please rate the driver</b></h4>
     <ngb-rating  [max]="5" [(rate)]="starRating" [readonly]="false" (onclick)="show()"></ngb-rating>
 
       <div class="input-icons">
         <i class="fa fa-pencil icon"></i>
-        <input  class="input-field" type="text"  style="border-radius: 10px;height: 70px; margin-left: 10%;width: 480px;text-align: center;"placeholder="Leave your feedback..." >
+        <input  class="input-field" type="text" class="feedback" placeholder="Leave your feedback..." >
     </div>
 
 
 
-      <input type="submit" value="Submit" style="  font-size: 30px; margin: 30px 0;background-color: rgb(255, 255, 255);text-size-adjust: 15px;height: 45px;width: 350px; border-radius: 15px;margin-left: 20%;">
+      <input type="submit" value="Submit" class="submit">
 
 
 

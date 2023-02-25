@@ -98,6 +98,40 @@ ngb-rating {
     text-align:center;
 
   }
-
-
+.logo{
+  width: 120px;
+  display: block;
+  margin-left: 230px;
+   margin-right: auto;
+}
+.feedback{
+  border-radius: 10px;
+  height: 70px;
+   margin-left: 10%;
+   width: 480px;
+   text-align: center;
+}
+.submit{
+  font-size: 30px;
+  margin: 30px 0;
+  background-color: rgb(255, 255, 255);
+  text-size-adjust: 15px;
+  height: 45px;
+  width: 350px;
+  border-radius: 15px;
+  margin-left: 20%;
+}
+.thank{
+  text-align: center;
+   color: white;
+}
+.last{
+  text-align: right ;
+  border-bottom: 1px solid #ffffff;
+}
+.message{
+  text-align: center;
+  margin-top: 20px;
+   color: rgb(45, 45, 45);
+}
 

@@ -53,3 +53,68 @@ body{
   border: 1px solid grey;
   padding: 0 10px;
 }
+.image-congrats{
+  width: 250px;
+  display: block;
+  margin-left: 150px;
+  margin-right: auto;
+  margin-top: 130px;
+}
+.process{
+  text-align: center;
+  color: white;
+  margin-top: 20px;
+}
+.congrats{
+  text-align: center;
+  color: white;
+}
+.submit{
+  font-size: 30px;
+  margin: 30px 0;
+  background-color: rgb(255, 255, 255);
+  text-size-adjust: 20px;
+  height: 50px;
+}
+.div-style{
+  width:500px;
+  position:absolute;
+  align-content: center;
+  margin-bottom: 10px;
+}
+.image{
+  width: 200px;
+   height: auto;
+   border-radius: 10px;
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+   width: 60% ;
+}
+.take-pic{
+  color:white;
+  font-size: 15px;
+  margin-left: 230px;
+}
+.icon-camera{
+  font-size: 90px;
+  color:white;
+  margin-left: 240px;
+}
+.pic-gallery{
+  color:white;
+  font-size: 15px;
+  margin-left: 40px
+}
+.gallery-icon
+{
+  font-size: 90px;
+  color:white;
+  margin-left: 40px
+}
+.ask{
+  color:white;
+  text-align: center;
+  margin: 10px 0;
+  font-size: 20px;
+}

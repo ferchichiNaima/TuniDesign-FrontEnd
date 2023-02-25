@@ -41,6 +41,7 @@ body{
 table {
   border-collapse: collapse;
   width: 100%;
+  margin-top: 25px;
 }
 
 th, td {
@@ -58,5 +59,20 @@ position: relative;
   background-color: rgb(254, 254, 254);
   width: 80%;
   border-radius: 20px;
+  margin-top: 50px;
 }
-
+.adress{
+  text-align: center;
+  margin-top: 70px;
+  color: white;
+  border: 1px solid black;
+  padding: 13px;
+}
+.info-ask{
+  text-align: center;
+   color: white;
+}
+.last-ligne{
+  text-align: right ;
+  border-bottom: 1px solid #ffffff;
+}
