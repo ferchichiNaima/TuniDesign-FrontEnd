@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginPageComponent } from './login-page/login-page.component';
+import { OrderComponent } from './order/order.component';
 import { PickUpPassComponent } from './pick-up-pass/pick-up-pass.component';
 import { RatingPageComponent } from './rating-page/rating-page.component';
 import { SendPictureComponent } from './send-picture/send-picture.component';
@@ -16,7 +17,9 @@ const routes: Routes = [
   {path: 'sendPicture', component: SendPictureComponent},
   {path: 'userInformation', component: UserInformationComponent},
   {path: 'rating', component: RatingPageComponent},
-  {path: 'pass', component: PickUpPassComponent}
+  {path: 'pass', component: PickUpPassComponent},
+  {path: 'order', component: OrderComponent},
+
 
 ];
 

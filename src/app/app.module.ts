@@ -11,6 +11,8 @@ import { UserInformationComponent } from './user-information/user-information.co
 import { RatingPageComponent } from './rating-page/rating-page.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { PickUpPassComponent } from './pick-up-pass/pick-up-pass.component';
+import { OrderComponent } from './order/order.component';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 
 @NgModule({
@@ -23,14 +25,16 @@ import { PickUpPassComponent } from './pick-up-pass/pick-up-pass.component';
     SendPictureComponent,
     UserInformationComponent,
     RatingPageComponent,
-    PickUpPassComponent
+    PickUpPassComponent,
+    OrderComponent
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule ,
-    FormsModule
+    FormsModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
