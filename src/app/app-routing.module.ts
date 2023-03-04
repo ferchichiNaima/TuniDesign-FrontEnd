@@ -19,6 +19,7 @@ const routes: Routes = [
   {path: 'rating', component: RatingPageComponent},
   {path: 'pass', component: PickUpPassComponent},
   {path: 'order', component: OrderComponent},
+  {path: '', redirectTo: 'login', pathMatch: 'full'},
 
 
 ];

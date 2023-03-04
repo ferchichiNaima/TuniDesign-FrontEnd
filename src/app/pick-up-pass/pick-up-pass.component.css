@@ -6,15 +6,16 @@
 }
 
 body{
-  display: flex;
-  height: calc(100vh - 80px);
-  background-color: rgba(210, 211, 211, 0.404);
-  border-radius: 15px;
-  margin: 10px;
-  align-items: center;
-  background-size: cover;
-  height: 550px;
   background-image: url('/assets/background.jpg');
+  background-size:center;
+  background-repeat: no-repeat;
+    overflow: hidden;
+background-size: cover;
+height: 518px;
+  position: center;
+
+  font-family: 'Raleway', sans-serif;
+
 
 }
 
@@ -23,7 +24,7 @@ body{
   left: 25%;
   width: 100%;
   max-width: 650px;
-  height: 750px;
+  height: 760px;
   /*background: rgba(0, 0, 0, 0.5);*/
   padding: 28px;
   margin: 0 28px;
@@ -32,7 +33,7 @@ body{
   border-radius: 0.55rem;
 
   background-color: rgba(85, 87, 96, 0.559) !important;
-  zoom: 70%;
+  zoom: 67%;
     left: 30%;
 
 }
