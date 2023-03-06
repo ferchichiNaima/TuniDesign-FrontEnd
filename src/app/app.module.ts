@@ -14,6 +14,7 @@ import { PickUpPassComponent } from './pick-up-pass/pick-up-pass.component';
 import { OrderComponent } from './order/order.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { ShiftComponent } from './shift/shift.component';
+import { KeycloakAngularModule } from 'keycloak-angular';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { ShiftComponent } from './shift/shift.component';
     NgbModule ,
     FormsModule,
     MatProgressSpinnerModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    KeycloakAngularModule
   ],
   providers: [],
   bootstrap: [AppComponent]
