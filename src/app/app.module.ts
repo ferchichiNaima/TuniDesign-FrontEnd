@@ -13,6 +13,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { PickUpPassComponent } from './pick-up-pass/pick-up-pass.component';
 import { OrderComponent } from './order/order.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { ShiftComponent } from './shift/shift.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     UserInformationComponent,
     RatingPageComponent,
     PickUpPassComponent,
-    OrderComponent
+    OrderComponent,
+    ShiftComponent
 
   ],
   imports: [

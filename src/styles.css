@@ -11,5 +11,23 @@
 
 
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body{
+  background-image: url('/assets/background.jpg');
+  background-size:center;
+  background-repeat: no-repeat;
+    overflow: hidden;
+background-size: cover;
+height: 518px;
+  position: center;
+
+  font-family: 'Raleway', sans-serif;
+
+}
+

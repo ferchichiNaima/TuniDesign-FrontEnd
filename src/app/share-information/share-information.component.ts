@@ -13,6 +13,7 @@ export class ShareInformationComponent implements OnInit {
   phone!:string;
   people!:number;
   situationType!:string;
+  time:any;
   constructor(private router: Router) { }
 
   ngOnInit(): void {
@@ -24,6 +25,7 @@ export class ShareInformationComponent implements OnInit {
   console.log(this.people)
   console.log(this.phone)
   console.log(this.situationType)
+  console.log(this.time);
   this.router.navigate(['/sendPicture']);
 }
 
