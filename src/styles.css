@@ -1,4 +1,3 @@
-@import "~bootstrap/dist/css/bootstrap.min.css";
 .footer {
   position:absolute;
   bottom:5px;
@@ -22,9 +21,9 @@ body{
   background-image: url('/assets/background.jpg');
   background-size:center;
   background-repeat: no-repeat;
-    overflow: hidden;
-background-size: cover;
-height: 518px;
+  overflow: hidden;
+  background-size: cover;
+  height: 518px;
   position: center;
 
   font-family: 'Raleway', sans-serif;
