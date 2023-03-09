@@ -24,9 +24,9 @@ body{
   background-repeat: no-repeat;
     overflow: hidden;
 background-size: cover;
-height: 518px;
-  position: center;
 
+  position: center;
+height: auto;
   font-family: 'Raleway', sans-serif;
 
 }

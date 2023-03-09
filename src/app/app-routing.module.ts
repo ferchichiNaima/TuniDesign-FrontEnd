@@ -12,16 +12,16 @@ import { UserInformationComponent } from './user-information/user-information.co
 
 const routes: Routes = [
 
-  {path: 'shareInformation', component: ShareInformationComponent},
+  {path: 'share', component: ShareInformationComponent},
   {path: 'signUp', component: SignUpComponent},
   {path: 'login', component: LoginPageComponent},
-  {path: 'sendPicture', component: SendPictureComponent},
+  {path: 'picture', component: SendPictureComponent},
   {path: 'userInformation', component: UserInformationComponent},
   {path: 'rating', component: RatingPageComponent},
   {path: 'pass', component: PickUpPassComponent},
   {path: 'order', component: OrderComponent},
   {path: 'shift', component: ShiftComponent},
-  {path: '', redirectTo: 'login', pathMatch: 'full'},
+
 
 
 ];

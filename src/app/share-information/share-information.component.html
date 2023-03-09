@@ -1,63 +1,157 @@
 
 
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
 
-  <div class="container">
-    <h4 class="share"><b>Share your informations</b></h4>
-    <p class="ask">Please share your informations to help you </p>
-    <img class="image" src="assets/gps.jpg" >
+<h2 style="text-align: center; color: white;">Share your informations please</h2>
 
-    <form action="#">
 
-        <div class="user-input-box">
-          <label for="location">Pick Up Location *</label>
-          <div class="input-icons">
-            <i class="fa fa-map-marker icon"></i>
-            <input class="input-field" type="text" id="location" name="location" placeholder="Enter your location " [(ngModel)]="pickUpLocation"/>
-        </div>
-        </div>
-        <div class="user-input-box">
-          <label for="destination">Destination *</label>
-          <div class="input-icons">
-            <i class="fa fa-map-marker icon"></i>
-          <input class="input-field" type="text" id="destination" name="destination"placeholder="Enter your destination" [(ngModel)]="destination"/>
-        </div>
-        </div>
+<div class="container">
+  <form (submit)="saveOrder()" [formGroup]="registerForm">
+    <div class="row form-group">
+      <div class="col-25">
+        <label for="location" style="color: white;">PickUp Location *</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="location" name="location" placeholder="Your location .."  [(ngModel)]="order.positionAAtt" class="form-control"
+        [ngClass]="{'is-invalid':submitted && registerForm.controls.location.errors}" formControlName="location" >
+          <div *ngIf="submitted && registerForm.controls.location.errors" class="text-danger">
+            <div *ngIf="submitted && registerForm.controls.location.errors.required">
+              pickUp location is required
+            </div>
+    </div>
+    </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="destination" style="color: white;">Destination *</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="destination" name="destination" placeholder="Your destination.." [(ngModel)]="order.positionBAtt" class="form-control"
+        [ngClass]="{'is-invalid':submitted && registerForm.controls.destination.errors}" formControlName="destination"  >
+          <div *ngIf="submitted && registerForm.controls.destination.errors" class="text-danger">
+            <div *ngIf="submitted && registerForm.controls.destination.errors.required">
+              Destination is required
+            </div>
+            </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="phone" style="color: white;">Phone *</label>
+      </div>
+      <div class="col-75">
+        <form #f="ngForm" [formGroup]="phoneForm">
+          <ngx-intl-tel-input [(ngModel)]="this.tel"
+          [cssClass]="'custom'"
+          [preferredCountries]="['sg']"
 
-    <div style="display:flex ;">
-        <div class="user-input-box ">
-          <label for="phone">Phone *</label>
-          <div class="input-icons">
-          <i class="fa fa-phone icon"></i>
-          <input class="input-field" type="text" id="phone" name="phone" style="width: 200px;" placeholder="Write your phone" [(ngModel)]="phone"  />
-        </div>
-        </div>
+          [enablePlaceholder]="true"
+          [enableAutoCountrySelect]="true"
+          [enablePlaceholder]="true"
+          [searchCountryFlag]="true"
+          [preferredCountries]="[CountryISO.Tunisia]"
+          [searchCountryField]="[SearchCountryField.Iso2, SearchCountryField.Name]"
+          [phoneValidation]="true"
 
-        <div class="user-input-box" >
-          <label for="poeple">Poeple *</label>
-          <div class="input-icons">
-            <i class="fa fa-users icon"></i>
-          <input class="input-field" style="width: 200px;" type="number" id="poeple" name="poeple" placeholder="How many poeple"  min="1" max="5" [(ngModel)]="people"/>
-        </div>
+
+
+
+          name="phone"
+          formControlName="phone"></ngx-intl-tel-input>
+        </form>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="people" style="color: white;">People *</label>
+      </div>
+      <div class="col-75">
+        <input class="input-field" style="width: 200px;" type="number" id="people" name="people" placeholder="How many people"  min="1" max="8" [(ngModel)]="order.people" class="form-control"
+        [ngClass]="{'is-invalid':submitted && registerForm.controls.people.errors}" formControlName="people"  >
+          <div *ngIf="submitted && registerForm.controls.people.errors" class="text-danger">
+            <div *ngIf="submitted && registerForm.controls.people.errors.required">
+              Number of people is required
+            </div>
+      </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="matricule" style="color: white;">Registration number *</label>
+      </div>
+      <div class="col-75">
+        <input class="input-field" type="number" id="matricule" name="matricule" placeholder="Your Registration number .." [(ngModel)]="order.idVehicule" class="form-control"
+        [ngClass]="{'is-invalid':submitted && registerForm.controls.matricule.errors}" formControlName="matricule" type="text" >
+          <div *ngIf="submitted && registerForm.controls.matricule.errors" class="text-danger">
+            <div *ngIf="submitted && registerForm.controls.matricule.errors.required">
+              Registration number is required
+            </div>
+            </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="isloaded"  style="color: white;">Is it a loaded vehicle?*</label>
+      </div>
+      <div class="col-75">
+        <input type="radio" name="loaded" id="loaded" value="oui"  [(ngModel)]="order.isLoaded"
+        [ngClass]="{'is-invalid':submitted && registerForm.controls.loaded.errors}" formControlName="loaded"  >
+
+            <label style="color:white;" for="yes">Yes</label>
+            <input type="radio" name="loaded" id="loaded" value="non"  [(ngModel)]="order.isLoaded"
+            [ngClass]="{'is-invalid':submitted && registerForm.controls.loaded.errors}" formControlName="loaded"  >
+
+            <label style="color:white" for="no">No</label>
+            <div *ngIf="submitted && registerForm.controls.loaded.errors" class="text-danger">
+              <div *ngIf="submitted && registerForm.controls.loaded.errors.required">
+                 it is required
+              </div>
+              </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="type"  style="color: white;">What Type of situation*</label>
+      </div>
+      <div class="col-75">
+        <input type="radio" name="type" id="type" value="accident"  [(ngModel)]="order.breakdownType"
+        [ngClass]="{'is-invalid':submitted && registerForm.controls.type.errors}" formControlName="type"  >
+
+            <label style="color:white;" for="accident">Accident</label>
+            <input type="radio" name="type" id="type" value="panne"  [(ngModel)]="order.breakdownType"
+            [ngClass]="{'is-invalid':submitted && registerForm.controls.type.errors}" formControlName="type" >
+
+            <label style="color:white" for="panne">Panne</label>
+            <div *ngIf="submitted && registerForm.controls.type.errors" class="text-danger">
+              <div *ngIf="submitted && registerForm.controls.type.errors.required">
+                Type of situation is required
+              </div>
+              </div>
+      </div>
     </div>
 
-      </div>
-      <div class="user-input-box">
-        <label for="typeaccident">What type of situation ? *</label>
-      </div>
-        <div class="gender-category">
-            <input type="radio" name="accident" id="accident" value="accident" class="radio1" [(ngModel)]="situationType" >
-            <label style="color:white;" for="male" style="">Accident</label>
-            <input type="radio" name="breakdown" id="breakdown" value="breakDown" class="radio2" [(ngModel)]="situationType">
-            <label style="color:white" for="female">BreakDown</label>
-          </div>
 
-        <div style="height:100px" class="user-input-box"  >
-          <div class="div-style">
-            <input type="submit" value="Confirm" class="submit" (click)="confirm()">
-         </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="details"  style="color: white;">Details *</label>
       </div>
-      <input id="appt-time" type="time" name="appt-time" value="13:30" [(ngModel)]="time">
-    </form>
-  </div>
+      <div class="col-75">
+        <textarea id="details" name="details" placeholder="Write some details please.." style="height:200px" [(ngModel)]="order.breakdownDetails" class="form-control"
+        [ngClass]="{'is-invalid':submitted && registerForm.controls.details.errors}" formControlName="details" ></textarea>
+          <div *ngIf="submitted && registerForm.controls.details.errors" class="text-danger">
+            <div *ngIf="submitted && registerForm.controls.details.errors.required">
+             details are required
+            </div>
 
+      </div>
+    </div>
+    </div>
 
+    <div class="row">
+      <input type="submit" value="Submit" (click)="saveOrder()">
+    </div>
+  </form>
+</div>
