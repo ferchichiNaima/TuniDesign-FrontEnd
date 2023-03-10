@@ -34,9 +34,9 @@
         <input class="form-control"
         ngx-google-places-autocomplete
         [options]="options"
-        (onAddressChange)="handleAddressChange($event)"
+        (onAddressChange)="handleAddressChangeLocation($event)"
          class="form-control"
-        [ngClass]="{'is-invalid':submitted && registerForm.controls.location.errors}" formControlName="location" >
+        [ngClass]="{'is-invalid':submitted && registerForm.controls.location.errors}" formControlName="location"  type="text">
           <div *ngIf="submitted && registerForm.controls.location.errors" class="text-danger">
             <div *ngIf="submitted && registerForm.controls.location.errors.required">
               pickUp location is required
@@ -53,11 +53,11 @@
         <input class="form-control"
         ngx-google-places-autocomplete
         [options]="options"
-        (onAddressChange)="handleAddressChange($event)"
+        (onAddressChange)="handleAddressChangeDestination($event)"
          class="form-control"
-        [ngClass]="{'is-invalid':submitted && registerForm.controls.location.errors}" formControlName="location" >
-          <div *ngIf="submitted && registerForm.controls.location.errors" class="text-danger">
-            <div *ngIf="submitted && registerForm.controls.location.errors.required">
+        [ngClass]="{'is-invalid':submitted && registerForm.controls.destination.errors}" formControlName="destination">
+          <div *ngIf="submitted && registerForm.controls.destination.errors" class="text-danger">
+            <div *ngIf="submitted && registerForm.controls.destination.errors.required">
               pickUp location is required
             </div>
     </div>

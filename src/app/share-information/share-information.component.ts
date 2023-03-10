@@ -20,6 +20,8 @@ export class ShareInformationComponent implements OnInit {
   markers = []  as  any;
   longA!:any
   attA!:any;
+  longB!:any
+  attB!:any;
   pickUpLocation!:string;
   info!: MapInfoWindow;
   infoContent = ''
@@ -60,26 +62,31 @@ export class ShareInformationComponent implements OnInit {
     })
 
     navigator.geolocation.getCurrentPosition((position) => {
+      let geocoder = new google.maps.Geocoder;
       this.center = {
+
         lat: position.coords.latitude,
         lng: position.coords.longitude,
+
+
       }
+
 
       this.markers.push({
         position: {
           lat: position.coords.latitude,
           lng: position.coords.longitude,
         },
-        label: {
-          color: 'red',
 
-        },
-        zoom:100,
+
         title: 'Your position ',
         info: 'Your position ',
         options: { animation: google.maps.Animation.BOUNCE },
+
       });
-    })
+
+    }
+    )
 
 
 
@@ -111,7 +118,8 @@ saveOrder(){
 else{
 this.order.positionALong=this.longA;
 this.order.positionAAtt=this.attA
-this.order.positionBLong="todo"
+this.order.positionBLong=this.longB
+this.order.positionBAtt=this.attB
 this.order.positionCLong="ToDO";
 this.order.positionCAtt="todo"
 const whitespaceRemoved = this.tel.nationalNumber.replace(/\s/g, '');
@@ -141,37 +149,54 @@ phoneForm = new FormGroup({
 
 
 options: any = {
-  componentRestrictions: { country: 'IN' }
+
 }
 
 
 
-handleAddressChange(address: Address) {
+handleAddressChangeLocation(address: Address) {
   this.attA=address.geometry.location.lat()
   this.longA=address.geometry.location.lng()
   console.log(address.formatted_address)
-  console.log(address.geometry.location.lat())
+  console.log(typeof address.geometry.location.lat())
   console.log(address.geometry.location.lng())
   this.markers.push({
     position: {
       lat: address.geometry.location.lat(),
       lng: address.geometry.location.lng(),
     },
-    label: {
-      color: 'red',
 
-    },
-    title: 'Your destination ' ,
-    info: 'Your destination ',
+    title: "Your destination " ,
+    info: "Your destination ",
     options: { animation: google.maps.Animation.BOUNCE },
   });
 }
+handleAddressChangeDestination(address: Address) {
+  this.attB=address.geometry.location.lat()
+  this.longB=address.geometry.location.lng()
+  console.log(address.formatted_address)
+
+  console.log(typeof address.geometry.location.lat())
+  console.log(address.geometry.location.lng())
+  this.markers.push({
+    position: {
+      lat: address.geometry.location.lat(),
+      lng: address.geometry.location.lng(),
+    }
+
+
+    ,
+    title: "Your destination " ,
+    info: "Your destination ",
+    options: { animation: google.maps.Animation.BOUNCE },
+  });
+}
+
 
 openInfo(marker: MapMarker, content: string) {
   this.infoContent = content;
   this.info.open(marker)
 }
-
 
 
 
