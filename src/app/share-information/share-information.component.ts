@@ -18,6 +18,7 @@ import { DOCUMENT } from '@angular/common';
 export class ShareInformationComponent implements OnInit {
   isApiLoaded = false;
   markers = []  as  any;
+  currentAdress=""
   longA!:any
   attA!:any;
   longB!:any
@@ -36,6 +37,7 @@ export class ShareInformationComponent implements OnInit {
   order1: OrderRequest = new OrderRequest();
   date: Date= new Date();
   message=""
+  messageR=''
   center!: google.maps.LatLngLiteral;
   tel!:any
   SearchCountryField = SearchCountryField;
@@ -47,7 +49,7 @@ export class ShareInformationComponent implements OnInit {
 
   ngOnInit(): void {
     this.registerForm = this.formBuilder.group({
-      location:['',[Validators.required]],
+      location:['',[]],
       destination:['',[Validators.required]],
 
       people:['',[Validators.required]],
@@ -68,10 +70,9 @@ export class ShareInformationComponent implements OnInit {
         lat: position.coords.latitude,
         lng: position.coords.longitude,
 
-
       }
-
-
+      this.attA=position.coords.latitude;
+      this.longA=position.coords.longitude,
       this.markers.push({
         position: {
           lat: position.coords.latitude,
@@ -84,9 +85,27 @@ export class ShareInformationComponent implements OnInit {
         options: { animation: google.maps.Animation.BOUNCE },
 
       });
+        geocoder
+        .geocode({ location: this.center })
+        .then((response) => {
+          if (response.results[0]) {
+            this.currentAdress= response.results[0].formatted_address;
+            console.log( this.currentAdress)
 
+          } else {
+            window.alert("No results found");
+          }
+        })
+        .catch((e) => window.alert("Geocoder failed due to: " + e));
     }
+
+
     )
+
+
+
+
+
 
 
 
@@ -111,11 +130,15 @@ export class ShareInformationComponent implements OnInit {
 saveOrder(){
 
   this.submitted = true
+  console.log(this.attA);
+  console.log(this.longA)
 
-    if(this.registerForm.invalid){
+    if(this.registerForm.invalid || this.currentAdress==''&&this.attA==null&&this.longA==null){
+      this.messageR="location required"
       return
     }
 else{
+  this.messageR=''
 this.order.positionALong=this.longA;
 this.order.positionAAtt=this.attA
 this.order.positionBLong=this.longB
@@ -149,6 +172,7 @@ phoneForm = new FormGroup({
 
 
 options: any = {
+  zoom:1000,
 
 }
 
