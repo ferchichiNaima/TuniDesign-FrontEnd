@@ -55,7 +55,15 @@ destinationT1=0
 destinationT2=0
 originT1=0
 originT2=0
-
+immatType!:any
+isRegistrationTypeSelected: boolean = false;
+registrationTypes = [{id: 1, value: "Série Normale (TU)"}, {id: 2, value: "Régime Suspensif (RS)"},
+{id: 3, value: "Moto (MOTO)"}, {id: 4, value: "Tracteur (TRAC)"}, {id: 5, value: "Personnel Administratif et Technique (PAT)"},
+{id: 6, value: "Chef de Mission Diplomatique (CMD)"}, {id: 7, value: "Corps Diplomatique (CD)"},
+{id: 8, value: "Misiion Diplomatique (MD)"}, {id: 9, value: "Misiion Consulaire (MC)"},
+{id: 10, value: "Corps Consulaire (CC)"}, {id: 11, value: "Remorque (REM)"},
+{id: 12, value: "Appareil Agricol (AA)"}, {id: 13, value: "Engin Spécial (ES)"}, {id: 14, value: "Propriété de l'Etat (PE)"},
+{id: 15, value: "Immatriculation Temporaire (IT)"}, {id: 16, value: "Immatriculation Etrangère ou Douanière"}]
 
  directionsResults$!: Observable<google.maps.DirectionsResult|undefined>;
 
@@ -82,7 +90,7 @@ originT2=0
       destination:['',[Validators.required]],
 
       people:['',[Validators.required]],
-      matricule:['',[Validators.required]],
+    matricule:['',[Validators.required]],
       matriculeconf:['',[Validators.required]],
     details:['',[Validators.required]],
     loaded:['',[Validators.required]],
@@ -163,7 +171,12 @@ originT2=0
   }
 
 
+  onRegistrationTypeChange(e: any){
+    this.isRegistrationTypeSelected = true;
+    this.immatType=e.target.value
+    console.log(this.immatType);
 
+  }
   confirm()
 {
  /* console.log(this.pickUpLocation)
@@ -182,6 +195,7 @@ saveOrder(){
 
   this.submitted = true
   console.log(this.attA);
+  console.log(this.immatType);
   console.log(this.longA)
 
     if(this.registerForm.invalid || this.currentAdress==''&&this.attA==null&&this.longA==null){
