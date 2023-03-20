@@ -55,6 +55,8 @@ destinationT1=0
 destinationT2=0
 originT1=0
 originT2=0
+serie!:any
+num!:any
 immatType!:any
 isRegistrationTypeSelected: boolean = false;
 registrationTypes = [{id: 1, value: "Série Normale (TU)"}, {id: 2, value: "Régime Suspensif (RS)"},
@@ -90,8 +92,7 @@ registrationTypes = [{id: 1, value: "Série Normale (TU)"}, {id: 2, value: "Rég
       destination:['',[Validators.required]],
 
       people:['',[Validators.required]],
-    matricule:['',[Validators.required]],
-      matriculeconf:['',[Validators.required]],
+
     details:['',[Validators.required]],
     loaded:['',[Validators.required]],
 
@@ -131,7 +132,7 @@ registrationTypes = [{id: 1, value: "Série Normale (TU)"}, {id: 2, value: "Rég
       this.directionsResults$ = this.mapDirectionsService.route(request).pipe(map(response => response.result));
 
       this.testOrigin=true
-      this.markers.push({
+      this.markers[0]={
         position: {
           lat: position.coords.latitude,
           lng: position.coords.longitude,
@@ -142,7 +143,19 @@ registrationTypes = [{id: 1, value: "Série Normale (TU)"}, {id: 2, value: "Rég
         info: 'Your position ',
         options: { animation: google.maps.Animation.DROP },
 
-      });
+      }
+   /*   this.markers.push({
+        position: {
+          lat: position.coords.latitude,
+          lng: position.coords.longitude,
+        },
+
+
+        title: 'Your position ',
+        info: 'Your position ',
+        options: { animation: google.maps.Animation.DROP },
+
+      });*/
         geocoder
         .geocode({ location: this.center })
         .then((response) => {
@@ -175,6 +188,7 @@ registrationTypes = [{id: 1, value: "Série Normale (TU)"}, {id: 2, value: "Rég
     this.isRegistrationTypeSelected = true;
     this.immatType=e.target.value
     console.log(this.immatType);
+    console.log(this.registrationTypes[this.immatType-1].value)
 
   }
   confirm()
@@ -193,10 +207,8 @@ registrationTypes = [{id: 1, value: "Série Normale (TU)"}, {id: 2, value: "Rég
 }
 saveOrder(){
 
-  this.submitted = true
-  console.log(this.attA);
-  console.log(this.immatType);
-  console.log(this.longA)
+
+
 
     if(this.registerForm.invalid || this.currentAdress==''&&this.attA==null&&this.longA==null){
       this.messageR="location required"
@@ -205,6 +217,9 @@ saveOrder(){
 else{
   this.messageR=''
 this.order.positionALong=this.longA;
+this.order.typeImmatriculation=this.registrationTypes[this.immatType-1].value
+
+
 this.order.positionAAtt=this.attA
 this.order.positionBLong=this.longB
 this.order.positionBAtt=this.attB
@@ -213,7 +228,9 @@ this.order.positionCAtt="todo"
 const whitespaceRemoved = this.tel.nationalNumber.replace(/\s/g, '');
 
 this.order.telephone=Number(whitespaceRemoved);
-if(whitespaceRemoved.length==8 && this.order.idVehicule==this.matriculeConfirm)
+console.log(this.order.telephone);
+console.log(this.order.numImmatriculation);
+if(whitespaceRemoved.length==8 )
 {
   this.orderService.createOrder(this.order).subscribe( data =>{
 localStorage.setItem('id',data.id)
@@ -255,7 +272,7 @@ handleAddressChangeLocation(address: Address) {
   this.originT1= address.geometry.location.lat(),
   this.originT2=address.geometry.location.lng(),
 
-  this.markers.push({
+  this.markers[0]={
     position: {
       lat: address.geometry.location.lat(),
       lng: address.geometry.location.lng(),
@@ -264,7 +281,7 @@ handleAddressChangeLocation(address: Address) {
     title: "Your destination " ,
     info: "Your destination ",
     options: { animation: google.maps.Animation.DROP },
-  });
+  }
   if(this.testRoute==false )
   {
     this.destinationT1=this.originT1;
@@ -291,7 +308,7 @@ handleAddressChangeDestination(address: Address) {
 
   console.log(typeof address.geometry.location.lat())
   console.log(address.geometry.location.lng())
-  this.markers.push({
+  this.markers[1]={
     position: {
       lat: address.geometry.location.lat(),
       lng: address.geometry.location.lng(),
@@ -302,7 +319,7 @@ handleAddressChangeDestination(address: Address) {
     title: "Your destination " ,
     info: "Your destination ",
     options: { animation: google.maps.Animation.DROP },
-  });
+  }
   if(this.testOrigin==false )
   {
     this.originT1=this.destinationT1;
